@@ -26,7 +26,7 @@ Posterior al tratamiento y exportacion de los datos mas bonitos y limpios se rea
   - Pandas<image src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pandas_mark.svg/225px-Pandas_mark.svg.png" width=20 align="center" style="margin-left:10px" alt="Pandas icon">
    - Matplotlib<image src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Matplotlib_icon.svg/2048px-Matplotlib_icon.svg.png" width=20 align="center" style="margin-left:10px" alt="Matplotlib icon">
   - Numpy<image src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1200px-NumPy_logo_2020.svg.png" width=60 align="center" style="margin-left:10px" alt="Numpy icon">
-  - Streamlit<image src="https://images.datacamp.com/image/upload/v1640050215/image27_frqkzv.png" width=20 align="center" style="margin-left:10px" alt="streamlit icon">
-  - Requests<image src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Requests-logo.png" width=60 align="center" style="margin-left:10px" alt="Requests icon">
+  - Streamlit<image src="https://images.datacamp.com/image/upload/v1640050215/image27_frqkzv.png" width=60 align="center" style="margin-left:10px" alt="streamlit icon">
+  - Requests<image src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Requests-logo.png" width=20 align="center" style="margin-left:10px" alt="Requests icon">
   - PowerBI<image src="https://www.uc3m.es/sdic/media/sdic/img/mediana/original/im_power-bi-pro---icono/im_power-bi-pro---icono.png" width=20 align="center" style="margin-left:10px" alt="PowerBI icon">
   
