@@ -16,9 +16,15 @@ Basado en el contexto de se un analista de datos para una empresa de telecomunic
 
 ### **Cronologia de eventos**
 
-Lo primero a realizar como siempre es el EDA cuyo proceso interno se compone del arreglo y limpieza de los datos, especificaciones al respecto de con que archivos se trabaja y que se hace con ello lo pueden encontrar en el siguiente link: [PI_EDA](https://pi2dataanalysis-q3u79xgfwedzd8paqbdk59.streamlit.app/).
+Lo primero a realizar como siempre es el EDA cuyo proceso interno se compone del arreglo y limpieza de los datos, especificaciones al respecto de con que archivos se trabaja y que se hace con ello lo pueden encontrar en el siguiente enlace: [PI_EDA](https://pi2dataanalysis-q3u79xgfwedzd8paqbdk59.streamlit.app/).
 
-Posterior al tratamiento y exportacion de los datos mas bonitos y limpios se realiza un dashboard con el desarrollo no solo del entendimiento del contexto empresarial sino tambien de metricas y KPI's para el mejoramiento del negocio guiado a su mision, esto lo pueden encontrar dentro del archivo dashboard.pbix, solo es importarlo en power BI
+Posterior al tratamiento y exportacion de los datos mas bonitos y limpios se realiza un dashboard con el desarrollo no solo del entendimiento del contexto empresarial sino tambien de metricas y KPI's para el mejoramiento del negocio guiado a su mision, esto lo pueden encontrar dentro del archivo dashboard.pbix, solo es importarlo en power BI. En cualquier caso si solo desea echarlo un vistazo lo puede encontrar acontinuacion:  
+***
+<image src="./Dashboard.png" align="center" style="margin-left:10px" alt="Python icon">
+***
+
+### **Analisis Estadistico**
+
 
 ### **Tecnologias**
 

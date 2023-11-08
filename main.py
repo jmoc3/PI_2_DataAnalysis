@@ -10,6 +10,10 @@ st.title('Telecomunicaciones (DA - PI2)')
 st.divider()
 st.markdown('- En este apartado se hara un previo analisis de datasets suministrados por el [*ENACOM*](https://datosabiertos.enacom.gob.ar/dashboards/20000/acceso-a-internet/) en APIS para el entendimiento del negocio y el desarrollo del mismo siguiendo la mision general de la empresa de telecomunicaciones: **Brindar acceso a internet**.  ')
 st.markdown('- Para ello primero realizaremos un **EDA** completo entendiendo como se encuentran los datos crudos y que se puede hacer respecto a la limpieza de los mismos.')
+st.divider()
+
+st.subheader('Sinopsis')
+st.markdown('- Dentro de esta pagina trataremos con cuatro archivos  ')
 
 key = 'FQ3taio22StSDU6EhW3BY5mjgPW0tIeKQnIYxP1X'
 api = f'http://api.datosabiertos.enacom.gob.ar/api/v2/datastreams/LISTA-DE-LOCAL-CON-CONEC/data.json/?auth_key={key}'
@@ -20,11 +24,23 @@ grouped_values = [values[i:i + 12] for i in range(0, len(values), 12)]
 
 loc_w_conection = pd.DataFrame(grouped_values[1:],columns=grouped_values[0])
 
-
-st.subheader('Sinopsis')
-st.markdown('- Dentro de esta pagina trataremos con tres archivos  ')
 st.markdown(':orange[Listado de localidades con conectividad a internet]')
 st.dataframe(loc_w_conection)
+
+api = f"http://api.datosabiertos.enacom.gob.ar/api/v2/datastreams/ACCES-A-INTER-FIJO-POR/data.json/?auth_key={key}"
+data = requests.get(api).json()
+
+values = []
+for i,x in enumerate(data['result']['fArray']):
+  if x['fType']=='TEXT': values.append(x['fStr'])
+  if x['fType']=='NUMBER': values.append(x['fNum'])
+
+grouped_values = [values[i:i+9] for i in range(0,len(values),9)]
+
+internet_access = pd.DataFrame(grouped_values[1:],columns=grouped_values[0])[:-1]
+
+st.markdown(':orange[Acceso a internet fijo por tecnologia y provincia]')
+st.dataframe(internet_access)
 
 
 api = f'http://api.datosabiertos.enacom.gob.ar/api/v2/datastreams/VELOC-PROME-DE-BAJAD-DE/data.json/?auth_key={key}'
@@ -56,8 +72,7 @@ TIC_lic = pd.DataFrame(grouped_values[1:],columns=grouped_values[0])
 
 st.dataframe(TIC_lic)
 
-
-
+st.divider()
 st.subheader('EDA')
 st.markdown('#### Listado de localidades con conectividad a internet')
 st.markdown('##### Valores Faltantes')
@@ -123,6 +138,17 @@ plt.title('Tipos de conexiones en localidades argentinas')
 st.pyplot(plt)
 plt.close()
 
+st.divider()
+st.markdown('#### Acceso a internet fijo por tecnologia y provincia')
+st.markdown('Al ser limitados los datos tampoco existe mucho margen de error en ellos aparte de una columna "total" que en la documentacion oficial no se especifica ni de donde sale ni que significa, asi que la alteraremos para asignar un total razonable respecto a las columnas restantes cuantitativas')
+
+internet_access['Total'] = internet_access['ADSL'] + internet_access['Cablemodem'] + internet_access['Fibra óptica'] + internet_access['Wireless'] + internet_access['Otros'] 
+
+code = "internet_access['Total'] = internet_access['ADSL'] + internet_access['Cablemodem'] + internet_access['Fibra óptica'] + internet_access['Wireless'] + internet_access['Otros'] "
+st.code(code)
+st.dataframe(internet_access.sample(5))
+
+st.divider()
 st.markdown('#### Velocidad media de bajada de internet fijo por provincia')
 st.markdown('##### *Valores atipicos/extremos o outliers*')
 st.markdown('Antes de empezar miremos si existen estos valores atipicos dentro de nuestra tabla "download_speed" :')
@@ -182,6 +208,7 @@ st.caption('Vistazo rapido')
 st.pyplot(plt)
 plt.close()
 
+st.divider()
 st.markdown('#### Listado de licencias TIC otorgadas')
 st.markdown('Realmente en esta tabla no existe muchas cosas que cambiar aparte de algunos detalles que por lo general se hacen por cuestion de normalizacion como por ejemplo las fechas o los textos que queremos utilizar para unir tablas.')
 st.dataframe(TIC_lic.sample(3)[['FECHA_RES','LOCALIDAD','PROVINCIA']])
@@ -212,11 +239,24 @@ plt.title("Provincias con mas licencias TIC")
 st.pyplot(plt)
 plt.close()
 
+st.divider()
 st.markdown("##### *Registros duplicados*")
 st.code(f"Datos duplicados en 'Locaciones con internet': {loc_w_conection.duplicated().sum()}")
 st.code(f"Datos duplicados en 'Velocidad de descarga': {download_speed.duplicated().sum()}")
 st.code(f"Datos duplicados en 'Licencias TIC': {TIC_lic.duplicated().sum()}")
+st.code(f"Datos duplicados en 'Acceso a internet': {internet_access.duplicated().sum()}")
 st.caption('Se resuelve:')
 st.code('loc_w_conection.drop_duplicates(inplace=True) # Done')
 
+st.divider()
+st.markdown('##### *Exportacion*')
+st.markdown('Ya para finalizar no queda mas que exportar estos archivos para utilizarlos en la realizacion del dashboard presentado en el repositorio oficial de este proyecto : [PI2_DA](https://github.com/jmoc3/PI_2_DataAnalysis)')
 
+code = '''
+loc_w_conection.to_csv('./clean_datasets/loc_with_connection.csv')
+download_speed.to_csv('./clean_datasets/download_speed.csv')
+TIC_lic.to_csv('./clean_datasets/TIC_livenses.csv')
+internet_access.to_csv('./clean_datasets/internet_access.csv')
+'''
+
+st.code(code)
