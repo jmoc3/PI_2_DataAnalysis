@@ -12,7 +12,7 @@ En comparación con la media mundial, Argentina está a la vanguardia en el desa
 
 ### **Objetivo**
 
-Basado en el contexto de se un analista de datos para una empresa de telecomunicaciones argentina, los objetivos principales rodean la idea en un **analisis completo** del negocio para poder comprender las caracteristicas del sector a nivel nacional y seguir la mision del mismo, poder ***brindar internet a la mayor cantidad de personas posibles***.
+Basado en el contexto de ser un analista de datos para una empresa de telecomunicaciones argentina, los objetivos principales rodean la idea en un **analisis completo** del negocio para poder comprender las caracteristicas del sector a nivel nacional y seguir la mision del mismo, poder ***brindar internet a la mayor cantidad de personas posibles***.
 
 ### **Cronologia de eventos**
 
@@ -25,7 +25,7 @@ Posterior al tratamiento y exportacion de los datos mas bonitos y limpios se rea
 ***
 ### **Analisis Estadistico**
 
-Lo primero a detallar respecto a los datos es por supuesto la informacion que nos puede brindar respecto al proposito principal de la empresa de accesibilizar la conectividad, sabemos que existen personas que tienen internet y otra que no pero, esta situacion realmente esta cambiando? lo hace a bien o a mal? bueno, de ahi el primer kpi que representa la diferencia porcentual entre la cantidad de personas que poseian internet el semestre pasado y las personas que actualmente se encuentran conectadas de alguna manera, de hecho podemos ver que las cifras aumentaron aproximadamente un 5%, lo que representaria un volumen de 40 mil ciudadanos más en nuestra base de datos.  
+Lo primero a detallar respecto a los datos es por supuesto la informacion que nos puede brindar respecto al proposito principal de la empresa de accesibilizar la conectividad, sabemos que existen personas que tienen internet y otras que no pero, esta situacion realmente esta cambiando? lo hace a bien o a mal? bueno, de ahi el primer kpi que representa la diferencia porcentual entre la cantidad de personas que poseian internet el semestre pasado y las personas que actualmente se encuentran conectadas de alguna manera, de hecho podemos ver que las cifras aumentaron aproximadamente un 5%, lo que representaria un volumen de 40 mil ciudadanos más en nuestra base de datos.  
 
 Respecto al segundo KPI basado en la velocidad de descarga es importante aclarar que, aunque se mantuvo una diferencia positiva entre el ultimo valor anual y el promedio, hubo una drastica disminucion entre la media de bajada en el ultimo año. Es bueno mantener ese margen de promedio por lo menos para primero enfocarnos mas en al cobertura y mantener un nivel de calidad nivelado pero si podemos prestarle atencion a eso al mismo tiempo  mucho mejor.
 
